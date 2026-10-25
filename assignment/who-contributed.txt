@@ -1,0 +1,43 @@
+I used these commands:
+
+git log -S "Even newspaper reports present contradictory information."
+This returned:
+commit c12b432741eed9a422fbf99fa27af6e7a941d88b
+Author: Arthur David Olson <ado@elsie>
+Date:   Thu Dec 21 11:43:42 1995 -0500
+
+    Eggert changes
+    
+    SCCS-file: northamerica
+    SCCS-SID: 7.20
+
+As this is the file that the text was first introduced, I wanted to take a closer look at the difference for that commit. So I used the following command.
+
+git -P diff c12b4 | grep "Even newspaper reports present contradictory information." -C 5
+
+This returned:
+-# Indiana generally observes either EST all year, or CST/CDT,
+-# but areas near Cincinnati and Louisville use those cities' timekeeping
+-# and in 1969 and 1970 the whole state observed daylight time;
+-# and there are other exceptions as noted below.
+-# Shanks partitions Indiana into 345 regions, each with its own time history,
+-# and writes ``Even newspaper reports present contradictory information.''
+-# Fortunately, most of the complexity occurred before our cutoff date of 1970.
++# For a map of Indiana's time zone regions, see:
++# https://en.wikipedia.org/wiki/Time_in_Indiana
+ #
+-# Since 1970, EST-only Indiana has been like America/Indianapolis,
+--
++#
++# - Crawford, Daviess, Dubois, Knox, Martin, Perry, Pike, Pulaski, Starke,
++#   and Switzerland counties have their own time zone histories as noted below.
++#
++# Shanks partitioned Indiana into 345 regions, each with its own time history,
++# and wrote "Even newspaper reports present contradictory information."
++# Those Hoosiers!  Such a flighty and changeable people!
++# Fortunately, most of the complexity occurred before our cutoff date of 1970.
++#
++# Other than Indianapolis, the Indiana place names are so nondescript
++# that they would be ambiguous if we left them at the 'America' level.
+
+As one can see, the maintainer properly cited and quoted the sentence as from being written from the author Shanks. Thus the argument that the statement was improperly copied is null and void.

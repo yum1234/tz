@@ -1,0 +1,1 @@
+git -P log --graph --oneline --all

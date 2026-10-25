@@ -24,7 +24,6 @@
 *.t
 *.tar
 *.tar.*
-*.txt
 *.tzs
 *.zi
 *~
