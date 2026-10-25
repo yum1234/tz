@@ -1,1 +1,2 @@
+#!/bin/bash
 git log "$@" --pretty=format:"%cd" --date=format:"%z" | sort -n | uniq -c | awk '{print $2, $1}'
