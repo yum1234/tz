@@ -1,15 +1,42 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 git init -b main
-echo "hello" > file.txt
-git add file.txt
-git commit -m "First commit"
 
-echo "more" >> file.txt
-git commit -am "Second commit"
+touch a.txt
+git add a.txt
+git commit -am "Inital commit"
 
-git switch -c side-branch
-echo "side" >other.txt
-git add other.txt
-git commit -m "A commit on a branch"
+echo hi >> a.txt
+git commit -am "Add README"
+
+echo hi >> a.txt
+git commit -am "Release 1.0"
+
+#experiment
+git switch -c experiment
+echo hi >> a.txt
+git commit -am "Add experimental"
+
+echo hi >> a.txt
+git commit -am "Try aggressive inlining"
+
+#feature/parser
+git switch -c feature/parser main
+echo hi > b.txt
+git add b.txt
+git commit -am "Add tokenizer"
+
+echo hi >> b.txt
+git commit -am "Add error recovery"
+
+echo hi >> b.txt
+git commit -am "Wire parser into build"
+
+#back to main
+git switch main
+echo hi >> a.txt
+git commit -am "Add logging support"
+
+git merge feature/parser -m "Merge branch 'feature/parser'"
+
