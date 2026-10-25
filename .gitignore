@@ -2,7 +2,7 @@
 # This file is in the public domain.
 #
 # Ignore all subdirectories.
-*/
+
 #
 # Ignore non-directories that are the output of builds,
 # or are backups or nonces unlikely to be added to the repository.
