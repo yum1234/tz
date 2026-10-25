@@ -1,1 +1,1 @@
-git log ${1} | grep -E '^Date' | tr -s ' ' | cut -d' ' -f7 | sort -n | uniq -c | awk '{print $2, $1}'
+git log "$@" --pretty=format:"%cd" --date=format:"%z" | sort -n | uniq -c | awk '{print $2, $1}'
