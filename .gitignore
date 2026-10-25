@@ -15,7 +15,6 @@
 *.i
 *.o
 *.orig
-*.out
 *.patch
 *.pdf
 *.ps
