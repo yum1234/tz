@@ -5,7 +5,7 @@ git init -b main
 
 touch a.txt
 git add a.txt
-git commit -am "Inital commit"
+git commit -am "Initial commit"
 
 echo hi >> a.txt
 git commit -am "Add README"
@@ -16,7 +16,7 @@ git commit -am "Release 1.0"
 #experiment
 git switch -c experiment
 echo hi >> a.txt
-git commit -am "Add experimental"
+git commit -am "Add experimental optimization"
 
 echo hi >> a.txt
 git commit -am "Try aggressive inlining"
@@ -38,5 +38,5 @@ git switch main
 echo hi >> a.txt
 git commit -am "Add logging support"
 
-git merge feature/parser -m "Merge branch 'feature/parser'"
+git merge feature/parser -m "Merge feature/parser"
 
